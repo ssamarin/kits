@@ -1,3 +1,7 @@
+
+import _ from './lib/lib';
 import './lib/lib';
 
-_('.active').show();
+_('button').on('click', function() {
+    _(this).toggleClass('active');
+});
