@@ -10,4 +10,6 @@ _('div').click(function() {
     console.log(_(this).index());
 });
 
-console.log(_('div').eq(2).find('.some'));
+// console.log(_('div').eq(2).find('.some'));
+// console.log(_('.some').closest('.findmfhe'));
+console.log(_('.findme').siblings());

@@ -62,7 +62,55 @@ _.prototype.find = function(selector) {
     const objLength = Object.keys(this).length;
     for (; numberOfItems < objLength; numberOfItems++) {
         delete this[numberOfItems];
-    }
+    };
+
+    return this;
+};
+
+
+_.prototype.closest = function(selector) {
+    let counter = 0;
+
+    for (let i = 0; i < this.length; i++) {
+        this[i] = this[i].closest(selector);
+        counter++; 
+    };
+
+    const objLength = Object.keys(this).length;
+    for (; counter < objLength; counter++) {
+        delete this[counter];
+    };
+
+    return this;
+};
+
+_.prototype.siblings = function() {
+    let numberOfItems = 0;
+    let counter = 0;
+
+    const copyObject = Object.assign({}, this);
+
+    for (let i = 0; i < copyObject.length; i++) {
+        const arr = copyObject[i].parentNode.children;
+
+        for (let j = 0; j < arr.length; j++) {
+            if (copyObject[i] === arr[j]) {
+                continue;
+            }
+
+            this[counter] = arr[j];
+            counter ++;
+        };
+
+        numberOfItems += arr.length - 1;
+    };
+
+    this.length = numberOfItems;
+
+    const objLength = Object.keys(this).length;
+    for (; numberOfItems < objLength; numberOfItems++) {
+        delete this[numberOfItems];
+    };
 
     return this;
 };
