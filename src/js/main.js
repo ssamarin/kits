@@ -12,4 +12,4 @@ _('div').click(function() {
 
 // console.log(_('div').eq(2).find('.some'));
 // console.log(_('.some').closest('.findmfhe'));
-console.log(_('.findme').siblings());
+_('button').fadeIn(1800);
