@@ -13,3 +13,5 @@ _('div').click(function() {
 // console.log(_('div').eq(2).find('.some'));
 // console.log(_('.some').closest('.findmfhe'));
 _('button').fadeIn(1800);
+
+
