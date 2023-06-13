@@ -57,3 +57,30 @@ _.prototype.fadeOut = function(dur, fin) {
 
     return this;
 };
+
+_.prototype.fadeToggle = function(dur, display, fin) {
+    for (let i = 0; i < this.length; i++) {
+
+        if (window.getComputedStyle(this[i]).display === 'none') {
+            this[i].style.display = display || 'block';
+
+            const _fadeIn = (complection) => {
+                this[i].style.opacity = complection;
+            };
+    
+            const ani = this.animateOverTime(dur, _fadeIn, fin);
+            requestAnimationFrame(ani);
+        } else {
+            this[i].style.opacity = 1 - complection;
+            if (complection === 1) {
+                this[i].style.display = 'none';
+            };
+        };
+
+    };
+    return this;
+};
+
+    return this;
+};
+ 
